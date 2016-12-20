@@ -8,7 +8,9 @@ docker build -t looprock/riemann-all .
 # Usage
 
 docker run -d --name riemann -p 5555:5555 -p 5555:5555/udp -p 5556:5556 looprock/riemann-server
+
 docker run -d -p 4567:4567 looprock/riemann-dash
+
 docker run --link riemann:riemann -d looprock/riemann-python-test
 
 next, point your browser at: http://localhost:4567/
